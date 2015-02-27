@@ -70,7 +70,7 @@ var server = http.createServer(function(req, res) {
   });
 
   // End the response on exit (and log errors)
-  cat.on('exit', function(code) {
+  cat.on('close', function(code) {
     if (code !== 0) {
       console.error('subprocess exited with code ' + code);
       process.exit(1);
